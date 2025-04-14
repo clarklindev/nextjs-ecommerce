@@ -1,5 +1,8 @@
+import { Button } from "@/components/ui/button";
+
 const Homepage = () => {
-  return ( <>homepage</> );
+  return ( <>homepage
+  </> );
 }
  
 export default Homepage;
