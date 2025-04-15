@@ -1,11 +1,9 @@
 export const metadata = {
-  title: 'home'
-}
-
+    title: 'home'
+};
 
 const Homepage = () => {
-  return ( <>homepage
-  </> );
-}
- 
+    return <>homepage</>;
+};
+
 export default Homepage;
