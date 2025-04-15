@@ -34,14 +34,16 @@ npx shadcn@latest add sheet
 npx shadcn@latest add card
 ```
 
-## Vercel Storage
+## 19. PostgreSQL & Prisma Setup
+
+### Vercel Storage
 
 -   serverless oostgres -> neon
     -   choose region
     -   choose plan
     -   choose name
 
-## prisma
+### prisma
 
 -   vscode extension: `prisma`
 
@@ -59,14 +61,36 @@ npx prisma init
     DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
 -   replace with vercel storage -> neon generated DATABASE_URL string
 
-## prisma models/schema
+## 20. Prisma Models & Migrations
+
+### prisma models/schema
 
 -   https://www.prisma.io/docs/orm/prisma-schema/data-model/models
 
 -   prisma/schema.prisma
--   run locally
+
+```prisma
+model Product {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name String
+  slug String @unique(map: "product_slug_idx")
+  category String
+  images String[]
+  brand String
+  description String
+  stock Int
+  price Decimal @default(0) @db.Decimal(12,2)
+  rating Decimal @default(0) @db.Decimal(3,2)
+  numReviews Int @default(0)
+  isFeatured Boolean @default(false)
+  banner String?
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+}
+```
 
 ### step1 - generate prisma client
+
+-   @6min
 
 ```sh
 npx prisma generate
@@ -89,3 +113,11 @@ npx prisma studio
 ```
 
 -   Prisma Studio is up on http://localhost:5555
+
+## 21. Seed Sample data
+
+-   db/seed.ts
+
+```sh
+npx tsx ./db/seed
+```
