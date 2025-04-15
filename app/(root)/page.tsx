@@ -2,7 +2,8 @@ export const metadata = {
     title: 'home'
 };
 
-const Homepage = () => {
+const Homepage = async () => {
+    // await new Promise((resolve) => setTimeout(resolve, 1500));
     return <>homepage</>;
 };
 
