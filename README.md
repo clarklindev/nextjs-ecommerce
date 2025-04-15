@@ -27,3 +27,9 @@ npx shadcn@latest add dropdown-menu
 ```sh
 npx shadcn@latest add sheet
 ```
+
+-   card
+
+```sh
+npx shadcn@latest add card
+```
