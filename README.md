@@ -1,5 +1,3 @@
-
-
 ```sh
 npx shadcn@latest init
 ```
@@ -12,12 +10,20 @@ npx shadcn@latest add button
 pnpm i lucide-react
 ```
 
-- Next Themes
+-   Next Themes
+
 ```sh
 pnpm i next-themes
 ```
 
-- Dropdown menu
+-   Dropdown menu
+
 ```sh
 npx shadcn@latest add dropdown-menu
+```
+
+-   Sheet
+
+```sh
+npx shadcn@latest add sheet
 ```
