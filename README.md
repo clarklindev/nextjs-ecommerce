@@ -298,3 +298,7 @@ export async function getProductBySlug(slug: string) {
 ```sh
 npx shadcn@latest add badge
 ```
+
+26. product images component
+
+-   components/shared/product/
