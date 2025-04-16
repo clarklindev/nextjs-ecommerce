@@ -278,3 +278,23 @@ generator client {
 ```sh
 npx prisma generate
 ```
+
+25. product details page
+
+-   TODO: create action that will get slug from url and fetch data depending on
+    slug
+-   lib/actions/product.actions.ts
+
+```ts
+export async function getProductBySlug(slug: string) {
+    return await prisma.product.findFirst({
+        where: { slug: slug }
+    });
+}
+```
+
+-   install shadcn badge
+
+```sh
+npx shadcn@latest add badge
+```
