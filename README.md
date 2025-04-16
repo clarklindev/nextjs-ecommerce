@@ -302,3 +302,42 @@ npx shadcn@latest add badge
 26. product images component
 
 -   components/shared/product/
+
+---
+
+# Section 4 - Authentication with Next Auth
+
+## 29. intro
+
+-   https://authjs.dev/getting-started/adapters/prisma
+
+## 30. User related models
+
+-   copy from models ->
+    https://authjs.dev/getting-started/adapters/prisma#schema -> PostgreSQL
+
+```prisma
+//prisma/schema-postgres.prisma
+
+model User {}
+
+model Account {}
+
+model Session {}
+
+model VerificationToken{}
+```
+
+-   because we added new models we have to regenerate our prisma client
+
+```sh
+npx prisma generate
+```
+
+```sh
+npx prisma migrate dev --name add_user_based_tables
+```
+
+```sh
+npx prisma studio
+```
