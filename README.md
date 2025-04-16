@@ -121,3 +121,160 @@ npx prisma studio
 ```sh
 npx tsx ./db/seed
 ```
+
+## 23. Zod Validation & Type Inference
+
+-   @ 2min50sec install zod
+
+```sh
+npm i zod
+```
+
+-   validation schemas (lib/validators.ts)
+
+```ts
+import { z } from 'zod';
+import { formatNumberWithDecimal } from './utils';
+
+//schemas for inserting products
+const currency = z
+    .string()
+    .refine(
+        (value) =>
+            /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(Number(value))),
+        'price must have exactly two decimal places'
+    );
+
+export const insertProductSchema = z.object({
+    name: z.string().min(3, 'name must be at least 3 characters'),
+    slug: z.string().min(3, 'slug must be at least 3 characters'),
+    category: z.string().min(3, 'category must be at least 3 characters'),
+    brand: z.string().min(3, 'brand must be at least 3 characters'),
+    description: z.string().min(3, 'description must be at least 3 characters'),
+    stock: z.coerce.number(), //convert to number
+    images: z.array(z.string()).min(1, 'product must have at least one image'),
+    isFeatured: z.boolean(),
+    banner: z.string().nullable(), //nullable -> optional
+    price: currency
+});
+```
+
+-   type/index.ts
+-   bring in the types from insertProductSchema with
+    `z.infer<typeof insertProductSchema>`
+
+```ts
+import { z } from 'zod';
+import { insertProductSchema } from '@/lib/validators';
+
+export type Product = z.infer<typeof insertProductSchema> & {
+    id: string;
+    rating: string;
+    createdAt: Date;
+};
+```
+
+### use `import { Product } from '@/types';`
+
+-   components/share/product/product-card.tsx
+
+```ts
+import { Product } from '@/types';
+
+const ProductCard = ({ product }: { product: Product }) => {
+    //...
+};
+```
+
+-   components/share/product/product-list.tsx
+
+```ts
+import ProductCard from './product-card';
+import { Product } from '@/types';
+
+const ProductList = ({
+    data,
+    title,
+    limit
+}: {
+    data: Product[];
+    title: string;
+    limit?: number;
+}) => {
+    const limitedData = limit ? data.slice(0, limit) : data;
+
+    return (
+        <div className="my-10">
+            <h2 className="h2-bold mb-4">{title}</h2>
+            {data.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {limitedData.map((product: Product, index: number) => (
+                        <ProductCard key={product.slug} product={product} />
+                    ))}
+                </div>
+            ) : (
+                <div>
+                    <p>no products found</p>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default ProductList;
+```
+
+-   then in app/(root)/page.tsx
+
+```ts
+'use server';
+import { PrismaClient } from '@/lib/generated/prisma';
+// import { convertToPlainObject } from '../utils';
+import { LATEST_PRODUCTS_LIMIT } from '../contants';
+
+//get latest products
+export async function getLatestProducts() {
+    const prisma = new PrismaClient();
+
+    const data = await prisma.product.findMany({
+        take: LATEST_PRODUCTS_LIMIT,
+        orderBy: { createdAt: 'desc' }
+    });
+
+    return data.map((product) => {
+        return {
+            ...product,
+            price: product.price.toString(),
+            rating: product.rating.toString()
+        };
+    });
+
+    // return convertToPlainObject(data);
+}
+```
+
+## 24. serverless environment config
+
+```sh
+npm i @neondatabase/serverless @prisma/adapter-neon ws
+```
+
+```sh
+npm i -D @types/ws bufferutil
+```
+
+-   `prisma/schema.prisma`
+
+```prisma
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+  previewFeatures = ["driverAdapters"]
+}
+```
+
+-   whenever we edit this file, we need to regenerate the client
+
+```sh
+npx prisma generate
+```
