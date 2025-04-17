@@ -488,3 +488,13 @@ npx shadcn@latest add label input
 
 -   login with credentials db/sample-data.ts
 -   see session: `http://localhost:3000/api/auth/session`
+
+## 38. Callback URL redirect
+
+<img
+src='exercise_files/38-callbackUrl-redirect.png'
+alt='38-callbackUrl-redirect.png'
+width=600
+/>
+
+-   if user has the callback url, should redirect user to that page
