@@ -5,11 +5,11 @@ import {
     CardHeader,
     CardTitle
 } from '@/components/ui/card';
-import { APP_NAME } from '@/lib/contants';
+import { APP_NAME } from '@/lib/constants';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import Image from 'next/image';
-
+import CredentialsSignInForm from './credentials-signin-form';
 export const metadata: Metadata = {
     title: 'Sign in'
 };
@@ -41,9 +41,7 @@ const SignInPage = () => {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    {
-                        // form here..
-                    }
+                    <CredentialsSignInForm />
                 </CardContent>
             </Card>
         </div>

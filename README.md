@@ -475,3 +475,9 @@ npx auth secret
 ## 33. Next Auth Catch all Api Route
 
 -   `app/api/auth/[...nextauth]/route.ts`
+
+## 36. Credentials Sign in form
+
+```sh
+npx shadcn@latest add label input
+```
