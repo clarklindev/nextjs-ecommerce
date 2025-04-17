@@ -481,3 +481,10 @@ npx auth secret
 ```sh
 npx shadcn@latest add label input
 ```
+
+## 37. Hook Up Sign In Form
+
+-   hooks useActionState / useFormStatus
+
+-   login with credentials db/sample-data.ts
+-   see session: `http://localhost:3000/api/auth/session`
