@@ -471,3 +471,7 @@ npm i next-auth@beta
 ```sh
 npx auth secret
 ```
+
+## 33. Next Auth Catch all Api Route
+
+-   `app/api/auth/[...nextauth]/route.ts`
