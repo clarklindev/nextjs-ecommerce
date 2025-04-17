@@ -341,3 +341,133 @@ npx prisma migrate dev --name add_user_based_tables
 ```sh
 npx prisma studio
 ```
+
+## 31. seed user data
+
+-   seed sample data with users `db/sample-data.ts`
+-   password should be hashed
+
+```sh
+npm i bcrypt-ts-edge
+```
+
+```ts
+//db/sample-data.ts
+import { hashSync } from 'bcrypt-ts-edge';
+
+const sampleData = {
+    users: [
+        {
+            name: 'John',
+            email: 'admin@example.com',
+            password: hashSync('123456', 10),
+            role: 'admin'
+        },
+        {
+            name: 'Jane',
+            email: 'user@example.com',
+            password: hashSync('123456', 10),
+            role: 'user'
+        }
+    ],
+```
+
+```ts
+//db/seed.ts
+import { PrismaClient } from '@prisma/client';
+import sampleData from './sample-data';
+
+async function main() {
+    const prisma = new PrismaClient();
+    await prisma.product.deleteMany();
+    await prisma.account.deleteMany();
+    await prisma.session.deleteMany();
+    await prisma.verificationToken.deleteMany();
+    await prisma.user.deleteMany();
+
+    await prisma.product.createMany({ data: sampleData.products });
+    await prisma.user.createMany({ data: sampleData.users });
+
+    console.log('Database seeded successfully');
+}
+
+main();
+```
+
+## seed database
+
+```sh
+npx tsx ./db/seed
+```
+
+```sh
+npx prisma studio
+```
+
+## 32. Next Auth setup
+
+-   generate a secret to sign JWT / session
+-   lessons use credentials provider (email/password)
+-   lessons use next-auth v5 (beta)
+
+## older docs (this is following course lessons)
+
+-   [next-auth.js](https://next-auth.js.org/configuration/options#nextauth_secret)
+
+## authentication
+
+### credentials
+
+-   https://authjs.dev/getting-started/authentication/credentials
+
+---
+
+## Connections
+
+### providers
+
+-   https://authjs.dev/getting-started/providers/credentials
+
+### adapter
+
+-   https://authjs.dev/getting-started/adapters/prisma
+
+-   note we using next-auth v5
+
+```sh
+npm i next-auth@beta
+```
+
+```sh
+npm i @auth/prisma-adapter
+```
+
+### generate secret
+
+```sh
+openssl rand -base64 32
+```
+
+-   set as NEXTAUTH_SECRET
+
+-   env variables we need to add.
+
+    -   NEXTAUTH_SECRET=
+    -   NEXTAUTH_URL="http://localhost:3000"
+    -   NEXTAUTH_URL_INTERNAL="http://localhost:3000"
+
+---
+
+## newer docs
+
+-   [auth.js](https://authjs.dev/getting-started/installation?framework=Next.js)
+
+```sh
+npm i next-auth@beta
+```
+
+### generate secret
+
+```sh
+npx auth secret
+```
