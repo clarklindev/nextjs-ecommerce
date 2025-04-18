@@ -498,3 +498,13 @@ width=600
 />
 
 -   if user has the callback url, should redirect user to that page
+
+-   https://www.udemy.com/course/nextjs-ecommerce-course/learn/lecture/47560379#questions/22871887
+
+-   signIn() function handles the redirect to callbackUrl internally, IF you
+    pass it in
+-   signIn() (from NextAuth) -> Detects callbackUrl and redirects
+-   Official Docs Confirm:
+-   signIn() will redirect to the URL specified by callbackUrl if no redirect:
+    false is provided. (From NextAuth.js documentation)
+-   The redirect to callbackUrl is built into NextAuth’s signIn() behavior.
