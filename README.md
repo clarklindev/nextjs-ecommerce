@@ -508,3 +508,22 @@ width=600
 -   signIn() will redirect to the URL specified by callbackUrl if no redirect:
     false is provided. (From NextAuth.js documentation)
 -   The redirect to callbackUrl is built into NextAuth’s signIn() behavior.
+
+## 39. User Button & Sign out
+
+-   we copy the env variables to vercel
+
+```
+NEXTAUTH_SECRET="3GFiN8N4oF5YWgyq11/8DCUZsLjIfs3aTrsZKKCZVX4=" # Added by `npx auth`. Read more: https://cli.authjs.dev
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL_INTERNAL=http://localhost:3000
+```
+
+-   note: vercel build errors happen if you do not add prefix `https://` or
+    `http://`
+
+-   TODO: add the logged-in User button
+-   TODO: ability to sign out
+
+-   components/shared/header/user-button.tsx
+-   put in components/shared/header/menu.tsx
