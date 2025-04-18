@@ -5,10 +5,8 @@ import {
     CardHeader,
     CardTitle
 } from '@/components/ui/card';
-import { APP_NAME } from '@/lib/constants';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import Image from 'next/image';
 import SignUpForm from './sign-up-form';
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
