@@ -13,6 +13,7 @@ import CredentialsSignInForm from './credentials-signin-form';
 
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
+import { LogoSVG } from '@/components/share/header/logoSVG';
 
 export const metadata: Metadata = {
     title: 'Sign in'
@@ -34,20 +35,7 @@ const SignInPage = async (props: {
             <Card>
                 <CardHeader className="space-y-4">
                     <Link href="/" className="flex-center flex-col gap-1">
-                        <Image
-                            src="/images/mankind.svg"
-                            width={60}
-                            height={60}
-                            alt={`${APP_NAME} logo`}
-                            priority={true}
-                        />
-                        <Image
-                            src="/images/logo.svg"
-                            width={100}
-                            height={100}
-                            alt={`${APP_NAME} logo text`}
-                            priority={true}
-                        />
+                        <LogoSVG />
                     </Link>
                     <CardTitle className="text-center">Sign-in</CardTitle>
                     <CardDescription className="text-center">
