@@ -527,3 +527,15 @@ NEXTAUTH_URL_INTERNAL=http://localhost:3000
 
 -   components/shared/header/user-button.tsx
 -   put in components/shared/header/menu.tsx
+
+---
+
+# Section 05. Add To Cart
+
+## 46. add to cart component
+
+-   Toast Component
+
+```sh
+npx shadcn@latest add toast
+```
