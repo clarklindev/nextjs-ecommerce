@@ -595,3 +595,5 @@ export async function getMyCart() {
     });
 }
 ```
+
+## 49. Price Calc & Add To Database
