@@ -597,3 +597,7 @@ export async function getMyCart() {
 ```
 
 ## 49. Price Calc & Add To Database
+
+## 50. Handle Quantity & Multiple Products
+
+-   adding same product should update quantity and not add new item to cart
