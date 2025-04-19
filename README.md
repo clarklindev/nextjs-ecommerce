@@ -539,3 +539,15 @@ NEXTAUTH_URL_INTERNAL=http://localhost:3000
 ```sh
 npx shadcn@latest add toast
 ```
+
+## 47. session cart ID cookie
+
+-   TODO: when we come to the site, it'll create this session cart ID, and
+    generate a cookie (UUID value)
+-   then can use that in our action later to connect the user to their cart
+    (whether logged in or not)
+
+-   auth.ts
+-   authorized() -> invoked when a user needs authorization using middleware
+-   setup middleware (function that runs between request/response) to use auth
+    function, which will run on every request
