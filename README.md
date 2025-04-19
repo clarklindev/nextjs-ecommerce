@@ -551,3 +551,47 @@ npx shadcn@latest add toast
 -   authorized() -> invoked when a user needs authorization using middleware
 -   setup middleware (function that runs between request/response) to use auth
     function, which will run on every request
+
+## 48. get item from cart
+
+-   to add an item to cart,
+
+    -   we have to get user
+    -   get product that we are adding from db
+
+-   if not logged in, user id will be `undefined`
+
+```
+┌─────────────────┬────────────────────────────────────────┐
+│ (index)         │ Values                                 │
+├─────────────────┼────────────────────────────────────────┤
+│ session cart id │ '3e2807b9-3c42-4442-8c15-4f940c7f7ee7' │
+│ user id         │ '7f1047c6-75b1-4b36-aa83-3082fea16653' │
+└─────────────────┴────────────────────────────────────────┘
+```
+
+### using the cart
+
+-   if they're logged in (there is a userId) -> we can get the cart by that...
+-   if they're not logged in -> get cart by sessionCartId and cookie
+
+```ts
+//lib/actions/cart.actions.ts
+
+export async function getMyCart() {
+    //check for the cart cookie
+    const sessionCartId = (await cookies()).get('sessionCartId')?.value;
+    if (!sessionCartId) {
+        throw new Error('Cart sessioin not found');
+    }
+
+    //get session and user id
+    const session = await auth();
+    const userId = session?.user?.id ? (session.user.id as string) : undefined;
+
+    //get user cart from database
+    const cart = await prisma.cart.findFirst({
+        where: userId ? { userId: userId } : { sessionCartId: sessionCartId }
+    });
+}
+```
