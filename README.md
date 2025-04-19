@@ -603,3 +603,5 @@ export async function getMyCart() {
 -   adding same product should update quantity and not add new item to cart
 
 ## 51. Remove Cart Action
+
+## 52. Dynamic Cart Button
