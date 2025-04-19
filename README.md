@@ -601,3 +601,5 @@ export async function getMyCart() {
 ## 50. Handle Quantity & Multiple Products
 
 -   adding same product should update quantity and not add new item to cart
+
+## 51. Remove Cart Action
