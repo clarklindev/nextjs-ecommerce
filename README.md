@@ -629,3 +629,9 @@ width=600
 />
 
 ## 55. Cart Page
+
+## 56. ShadCN UI Table
+
+```sh
+npx shadcn@latest add table
+```
