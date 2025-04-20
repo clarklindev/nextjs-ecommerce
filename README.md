@@ -646,3 +646,22 @@ npx shadcn@latest add table
 ```
 
 ## 57. Subtotal Card
+
+## 58. Shipping Address Zod Schema & Page
+
+-   user enters address
+-   if users data is in database, it will be pre-populated
+-   `react-hook-form` package
+
+## 59. Shipping Address & Form
+
+```sh
+npm i react-hook-form @hookform/resolvers
+```
+
+-   https://ui.shadcn.com/docs/components/form#create-a-form-schema
+-   https://ui.shadcn.com/docs/components/form#build-your-form
+
+```sh
+npx shadcn@latest add form
+```
