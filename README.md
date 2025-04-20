@@ -1,10 +1,12 @@
-```sh
+    ```sh
+
 npx shadcn@latest init
-```
+
+````
 
 ```sh
 npx shadcn@latest add button
-```
+````
 
 ```sh
 pnpm i lucide-react
@@ -607,3 +609,23 @@ export async function getMyCart() {
 ## 52. Dynamic Cart Button
 
 ## 53. Smooth UI With useTransition Hook
+
+---
+
+# Section 06. Cart & Shipping Pages
+
+## 54. Section Intro
+
+<img
+src='exercise_files/54-shopping-cart.png'
+alt='54-shopping-cart.png'
+width=600
+/>
+
+<img
+src='exercise_files/54-shipping-address.png'
+alt='54-shipping-address.png'
+width=600
+/>
+
+## 55. Cart Page
