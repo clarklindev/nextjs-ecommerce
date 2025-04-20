@@ -1,12 +1,12 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-// import { toast } from 'sonner';
+import { toast } from 'sonner';
 import { useTransition } from 'react';
 import { ShippingAddress } from '@/types';
 import { shippingAddressSchema } from '@/lib/validators';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm, ControllerRenderProps } from 'react-hook-form';
+import { useForm, ControllerRenderProps, SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 import { shippingAddressDefaultValues } from '@/lib/constants';
 import {
@@ -20,9 +20,10 @@ import {
 import { Input } from '@/components/ui/input';
 import { ArrowRight, Loader } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { updateUserAddress } from '@/lib/actions/user.actions';
 
 const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
-    // const router = useRouter();
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof shippingAddressSchema>>({
         resolver: zodResolver(shippingAddressSchema),
@@ -31,8 +32,19 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
 
     const [isPending, startTransition] = useTransition();
 
-    const onSubmit = () => {
-        return;
+    const onSubmit: SubmitHandler<
+        z.infer<typeof shippingAddressSchema>
+    > = async (values) => {
+        startTransition(async () => {
+            const res = await updateUserAddress(values);
+
+            if (!res.success) {
+                toast.error(res.message);
+                return;
+            }
+
+            router.push('/payment-method');
+        });
     };
 
     return (
@@ -180,7 +192,11 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                         </div>
 
                         <div className="flex-gap-2">
-                            <Button type="submit" disabled={isPending}>
+                            <Button
+                                type="submit"
+                                disabled={isPending}
+                                className="cursor-pointer"
+                            >
                                 {isPending ? (
                                     <Loader className="w-4 h-4 animate-spin" />
                                 ) : (
