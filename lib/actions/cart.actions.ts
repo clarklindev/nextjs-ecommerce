@@ -141,7 +141,7 @@ export async function getMyCart() {
     //check for the cart cookie
     const sessionCartId = (await cookies()).get('sessionCartId')?.value;
     if (!sessionCartId) {
-        throw new Error('Cart sessioin not found');
+        throw new Error('Cart session not found');
     }
 
     //get session and user id

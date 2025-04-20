@@ -94,23 +94,29 @@ export const config = {
                     const sessionCartId =
                         cookiesObject.get('sessionCartId')?.value;
 
-                    if (sessionCartId) {
-                        const sessionCart = await prisma.cart.findFirst({
-                            where: { sessionCartId }
+                    if (!sessionCartId) {
+                        return;
+                    }
+
+                    const sessionCart = await prisma.cart.findFirst({
+                        where: { sessionCartId }
+                    });
+
+                    if (!sessionCart) {
+                        return token;
+                    }
+
+                    if (sessionCart.userId !== user.id) {
+                        //delete current user cart
+                        await prisma.cart.deleteMany({
+                            where: { userId: user.id }
                         });
 
-                        if (sessionCart) {
-                            //delete current user cart
-                            await prisma.cart.deleteMany({
-                                where: { userId: user.id }
-                            });
-
-                            //assign new cart
-                            await prisma.cart.update({
-                                where: { id: sessionCart.id },
-                                data: { userId: user.id }
-                            });
-                        }
+                        //assign new cart
+                        await prisma.cart.update({
+                            where: { id: sessionCart.id },
+                            data: { userId: user.id }
+                        });
                     }
                 }
             }
@@ -121,6 +127,7 @@ export const config = {
             }
             return token;
         },
+
         ...authConfig.callbacks
     }
 };

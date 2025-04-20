@@ -11,6 +11,8 @@ import { hashSync } from 'bcrypt-ts-edge';
 import { prisma } from '@/db/prisma';
 import { formatError } from '../utils';
 import { ShippingAddress } from '@/types';
+import { cookies } from 'next/headers';
+
 //sign in user with credentials
 export async function signInWithCredentials(
     prevState: unknown,
@@ -34,7 +36,9 @@ export async function signInWithCredentials(
 
 //sign user out
 export async function signOutUser() {
-    await signOut();
+    const cookieStore = await cookies();
+    cookieStore.delete('sessionCartId');
+    await signOut({ redirectTo: '/' });
 }
 
 export async function signUpUser(prevState: unknown, formData: FormData) {

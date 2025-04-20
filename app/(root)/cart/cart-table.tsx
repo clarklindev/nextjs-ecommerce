@@ -19,7 +19,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { formatCurrency } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
-import { Arrow } from '@radix-ui/react-dropdown-menu';
+// import { Arrow } from '@radix-ui/react-dropdown-menu';
 
 const CartTable = ({ cart }: { cart?: Cart }) => {
     const router = useRouter();

@@ -678,3 +678,8 @@ npx shadcn@latest add form
 4. place order
 
 ## 62. persist session cart
+
+## 63. Protecting Paths
+
+-   https://authjs.dev/getting-started/session-management/protecting
+-   https://www.udemy.com/course/nextjs-ecommerce-course/learn/lecture/47571607#questions/22806241/
