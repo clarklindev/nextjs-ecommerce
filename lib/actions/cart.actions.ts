@@ -20,10 +20,10 @@ const calcPrice = (items: CartItem[]) => {
         totalPrice = itemsPrice + taxPrice + shippingPrice;
 
     return {
-        itemsPrice: itemsPrice,
-        shippingPrice: shippingPrice,
-        taxPrice: taxPrice,
-        totalPrice: totalPrice
+        itemsPrice: itemsPrice.toFixed(2).toString(),
+        shippingPrice: shippingPrice.toFixed(2).toString(),
+        taxPrice: taxPrice.toFixed(2).toString(),
+        totalPrice: totalPrice.toFixed(2).toString()
     };
 };
 

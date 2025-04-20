@@ -676,3 +676,5 @@ npx shadcn@latest add form
 2. shipping address
 3. payment method
 4. place order
+
+## 62. persist session cart
