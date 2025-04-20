@@ -36,6 +36,15 @@ npx shadcn@latest add sheet
 npx shadcn@latest add card
 ```
 
+## 04. The environment
+
+-   prettier
+-   eslint (microsoft)
+-   prisma (prisma)
+-   simple react snippets (burke holland)
+-   javascript es6 (charalampos karypidis)
+-   markdown preview enhanced (yiyi wang)
+
 ## 19. PostgreSQL & Prisma Setup
 
 ### Vercel Storage
