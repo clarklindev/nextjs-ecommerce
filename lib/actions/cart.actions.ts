@@ -11,18 +11,19 @@ import { Prisma } from '@prisma/client';
 
 //calculate cart prices
 const calcPrice = (items: CartItem[]) => {
-    const itemsPrice = round2(
-            items.reduce((acc, item) => acc + Number(item.price) * item.qty, 0)
+    const itemsPrice = items.reduce(
+            (acc, item) => acc + Number(item.price) * item.qty,
+            0
         ),
-        shippingPrice = round2(itemsPrice > 100 ? 0 : 10),
-        taxPrice = round2(0.15 * itemsPrice),
-        totalPrice = round2(itemsPrice + taxPrice + shippingPrice);
+        shippingPrice = itemsPrice > 100 ? 0 : 10,
+        taxPrice = 0.15 * itemsPrice,
+        totalPrice = itemsPrice + taxPrice + shippingPrice;
 
     return {
-        itemsPrice: itemsPrice.toFixed(2),
-        shippingPrice: shippingPrice.toFixed(2),
-        taxPrice: taxPrice.toFixed(2),
-        totalPrice: totalPrice.toFixed(2)
+        itemsPrice: itemsPrice,
+        shippingPrice: shippingPrice,
+        taxPrice: taxPrice,
+        totalPrice: totalPrice
     };
 };
 

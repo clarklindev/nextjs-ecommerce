@@ -635,3 +635,5 @@ width=600
 ```sh
 npx shadcn@latest add table
 ```
+
+## 57. Subtotal Card
