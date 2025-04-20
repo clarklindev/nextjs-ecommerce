@@ -665,3 +665,14 @@ npm i react-hook-form @hookform/resolvers
 ```sh
 npx shadcn@latest add form
 ```
+
+## 60. Update User Address
+
+## 61. Checkout Steps Component
+
+-   form steps
+
+1. user login
+2. shipping address
+3. payment method
+4. place order
