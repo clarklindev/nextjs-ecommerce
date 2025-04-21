@@ -738,3 +738,5 @@ npx prisma studio
 ## 69. Order Zod Schemas & Types
 
 -   lib/validators.ts
+
+## 70. Place Order Page
