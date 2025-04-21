@@ -68,6 +68,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                                         </TableCell>
                                         <TableCell className="flex-center gap-2">
                                             <Button
+                                                className="cursor-pointer"
                                                 disabled={isPending}
                                                 variant="outline"
                                                 type="button"
@@ -97,6 +98,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                                             <span>{item.qty}</span>
                                             <Button
                                                 disabled={isPending}
+                                                className="cursor-pointer"
                                                 variant="outline"
                                                 type="button"
                                                 onClick={() =>

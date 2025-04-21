@@ -61,7 +61,12 @@ const PlaceOrderPage = async () => {
                             </p>
                             <div className="mt-3">
                                 <Link href="/shipping-address">
-                                    <Button variant="outline">Edit</Button>
+                                    <Button
+                                        className="cursor-pointer"
+                                        variant="outline"
+                                    >
+                                        Edit
+                                    </Button>
                                 </Link>
                             </div>
                         </CardContent>
@@ -73,7 +78,12 @@ const PlaceOrderPage = async () => {
                             <p>{user.paymentMethod}</p>
                             <div className="mt-3">
                                 <Link href="/payment-method">
-                                    <Button variant="outline">Edit</Button>
+                                    <Button
+                                        className="cursor-pointer"
+                                        variant="outline"
+                                    >
+                                        Edit
+                                    </Button>
                                 </Link>
                             </div>
                         </CardContent>

@@ -15,7 +15,7 @@ const UserButton = async () => {
     const session = await auth();
     if (!session) {
         return (
-            <Button asChild>
+            <Button className="cursor-pointer" asChild>
                 <Link href="/sign-in">
                     <UserIcon /> Sign in
                 </Link>
@@ -32,7 +32,7 @@ const UserButton = async () => {
                     <div className="flex items-center">
                         <Button
                             variant="ghost"
-                            className="relative w-8 h-8 rounded-full ml-2 flex items-center justify-center bg-gray-200"
+                            className="relative w-8 h-8 rounded-full ml-2 flex items-center justify-center bg-gray-200 cursor-pointer"
                         >
                             {firstInitial}
                         </Button>
