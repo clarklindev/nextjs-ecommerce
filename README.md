@@ -740,3 +740,7 @@ npx prisma studio
 -   lib/validators.ts
 
 ## 70. Place Order Page
+
+-   lib/actions/order.actions.ts
+
+## 71. Create Order Action
