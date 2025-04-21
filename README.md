@@ -714,3 +714,9 @@ width=600
 -   schema
 
 ## 66. Payment Method Page
+
+## 67. Payment Method Form & Update
+
+```sh
+npx shadcn@latest add radio-group
+```
