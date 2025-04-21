@@ -712,3 +712,5 @@ width=600
 
 -   constants
 -   schema
+
+## 66. Payment Method Page
