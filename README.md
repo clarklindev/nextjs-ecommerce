@@ -709,3 +709,6 @@ width=600
 />
 
 ## 65. Payment Method Action & Zod Schema
+
+-   constants
+-   schema
