@@ -746,3 +746,13 @@ npx prisma studio
 ## 71. Create Order Action
 
 ## 72. Place Order Form
+
+## 73. Order Page & Action
+
+```sh
+npx prisma generate
+```
+
+```sh
+npx prisma migrate dev --name orderitems_update
+```
