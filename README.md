@@ -720,3 +720,17 @@ width=600
 ```sh
 npx shadcn@latest add radio-group
 ```
+
+## 68. Order & OrderItem Prisma Schema
+
+```sh
+npx prisma generate
+```
+
+```sh
+npx prisma migrate dev --name add-order
+```
+
+```
+npx prisma studio
+```
