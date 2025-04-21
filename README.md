@@ -734,3 +734,7 @@ npx prisma migrate dev --name add-order
 ```
 npx prisma studio
 ```
+
+## 69. Order Zod Schemas & Types
+
+-   lib/validators.ts
