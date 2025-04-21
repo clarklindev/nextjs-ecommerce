@@ -683,3 +683,29 @@ npx shadcn@latest add form
 
 -   https://authjs.dev/getting-started/session-management/protecting
 -   https://www.udemy.com/course/nextjs-ecommerce-course/learn/lecture/47571607#questions/22806241/
+
+---
+
+# Section 07 - Payment Method & Order Pages
+
+## 64. section intro
+
+<img
+src='exercise_files/64-1-payment-method.png'
+alt='64-1-payment-method.png'
+width=600
+/>
+
+<img
+src='exercise_files/64-2-place-order.png'
+alt='64-2-place-order.png'
+width=600
+/>
+
+<img
+src='exercise_files/64-3-order-detail.png'
+alt='64-3-order-detail.png'
+width=600
+/>
+
+## 65. Payment Method Action & Zod Schema
