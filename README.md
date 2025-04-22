@@ -1033,3 +1033,13 @@ export async function createPayPalOrder(orderId: string) {
 ```
 
 ## 83. Approve & Update Order
+
+## 84. Implement PayPal Button
+
+```sh
+npm i @paypal/react-paypal-js
+```
+
+-   app/(root)/order/[id]/order-details-table.tsx
+
+-   paypal button -> use sandbox (personal) acc details to make payment
