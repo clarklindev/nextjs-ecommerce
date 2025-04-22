@@ -849,3 +849,76 @@ async function generateAccessToken() {
     }
 }
 ```
+
+## 79. Jest Testing For Access Token
+
+-   dotenv for .env
+
+```sh
+npm i -D jest ts-jest ts-node @types/jest @types/node dotenv
+```
+
+```
+npm init jest@latest
+```
+
+```
+√ Would you like to use Jest when running "test" script in "package.json"? ... yes
+√ Would you like to use Typescript for the configuration file? ... yes
+√ Choose the test environment that will be used for testing » node
+√ Do you want Jest to add coverage reports? ... no
+√ Which provider should be used to instrument code for coverage? » v8
+√ Automatically clear mock calls, instances, contexts and results before every test? ... yes
+```
+
+-   this creates: `jest.config.ts`
+
+-   update:
+
+```ts
+//jest.config.ts
+
+//...
+
+preset: 'ts-jest';
+```
+
+-   package.json
+
+```json
+    "test": "jest",
+    "test:watch": "jest --watch"
+```
+
+-   jest.setup.ts
+
+```ts
+import dotenv from 'dotenv';
+dotenv.config();
+```
+
+-   tell jest config where setup file is
+-   jest.config.ts
+
+```
+  setupFiles: ['<rootDir>/jest.setup.ts']
+```
+
+### testing
+
+```ts
+//tests/paypal.test.ts
+import { generateAccessToken } from '../lib/paypal';
+
+//test to generate access token from paypal
+test('generates token from paypal', async () => {
+    const tokenResponse = await generateAccessToken();
+    console.log('tokenResponse: ', tokenResponse);
+    expect(typeof tokenResponse).toBe('string');
+    expect(tokenResponse.length).toBeGreaterThan(0);
+});
+```
+
+```
+npm test
+```
