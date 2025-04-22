@@ -980,3 +980,7 @@ export const paypal = {
 ```
 
 -   capture payment
+
+## 81. Jest Testing For Order Payment
+
+-   npm test
