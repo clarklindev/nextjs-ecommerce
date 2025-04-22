@@ -758,3 +758,5 @@ npx prisma migrate dev --name orderitems_update
 ```
 
 ## 74. Format Utility Functions
+
+## 75. Order Details Table

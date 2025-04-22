@@ -73,7 +73,7 @@ export function formatCurrency(amount: number | string | null) {
 }
 
 //shorten UUid
-export function fomatId(id: string) {
+export function formatId(id: string) {
     return `..${id.substring(id.length - 6)}`;
 }
 
