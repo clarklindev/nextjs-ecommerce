@@ -984,3 +984,50 @@ export const paypal = {
 ## 81. Jest Testing For Order Payment
 
 -   npm test
+
+## 82. Create PayPal Order Action
+
+```ts
+//lib/actions/order.actions.ts
+
+//create new paypal order
+export async function createPayPalOrder(orderId: string) {
+    try {
+        //get order from database
+        const order = await prisma.order.findFirst({
+            where: {
+                id: orderId
+            }
+        });
+
+        if (order) {
+            //create paypal order
+            const paypalOrder = await paypal.createOrder(
+                Number(order.totalPrice)
+            );
+            //update order with paypal order id
+            await prisma.order.update({
+                where: { id: orderId },
+                data: {
+                    paymentResult: {
+                        id: paypalOrder.id,
+                        email_address: '',
+                        status: '',
+                        pricePaid: 0
+                    }
+                }
+            });
+
+            return {
+                success: true,
+                message: 'Item order created successfully',
+                data: paypalOrder.id
+            };
+        } else {
+            throw new Error('Order not found');
+        }
+    } catch (error) {
+        return { success: false, message: formatError(error) };
+    }
+}
+```
