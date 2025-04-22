@@ -760,3 +760,43 @@ npx prisma migrate dev --name orderitems_update
 ## 74. Format Utility Functions
 
 ## 75. Order Details Table
+
+---
+
+# Section 08 - paypal payments
+
+## 76. Section Intro
+
+## 77. PayPal Sandbox Setup
+
+-   developer.paypal.com
+-   developer sandbox mode to test app
+-   creates sandbox acc for buyer (personal) AND seller (business acc)
+-   sandbox -> create an app
+
+-   clientID ->
+-   secret ->
+
+-   given accounts
+
+<img
+src='exercise_files/77-personal-business-acc.png'
+alt='77-personal-business-acc.png'
+width=600
+/>
+
+-   create an app
+
+<img
+src='exercise_files/77-app-clientid-secret.png'
+alt='77-app-clientid-secret.png'
+width=600
+/>
+
+.env
+
+```env
+PAYPAL_API_URL="https://api-m.sandbox.paypal.com"
+PAYPAL_CLIENT_ID="AR-v5OlqK_XcY4eGOXeIh4htHSBSzbE8Jn3U"
+PAYPAL_APP_SECRET="EA3s35M_kuoYaEmDmV906GIPGTsTTz6odOS"
+```
