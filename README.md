@@ -1063,3 +1063,5 @@ npm i @paypal/react-paypal-js
 ```sh
 npm i query-string
 ```
+
+## 90. Update Profile Action
