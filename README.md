@@ -1057,3 +1057,9 @@ npm i @paypal/react-paypal-js
 ## 88. Orders Page
 
 -   added links to menu to '/user/profile' and '/user/orders'
+
+## 89. Orders Pagination
+
+```sh
+npm i query-string
+```
