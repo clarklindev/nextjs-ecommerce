@@ -1,5 +1,5 @@
-import { APP_NAME } from '@/lib/constants';
-import Image from 'next/image';
+// import { APP_NAME } from '@/lib/constants';
+// import Image from 'next/image';
 import Link from 'next/link';
 import Menu from '@/components/share/header/menu';
 import { LogoSVG } from '@/components/share/header/logoSVG';
