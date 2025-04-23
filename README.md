@@ -1053,3 +1053,7 @@ npm i @paypal/react-paypal-js
 ## 86. User Layout & Menu
 
 ## 87. Get My Orders Action
+
+## 88. Orders Page
+
+-   added links to menu to '/user/profile' and '/user/orders'
