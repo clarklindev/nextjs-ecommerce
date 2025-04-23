@@ -1069,3 +1069,21 @@ npm i query-string
 ## 91. Update Profile Form
 
 ## 92. Profile Form Submission
+
+---
+
+# 10. Admin Overview & Orders
+
+## 093. Section Intro
+
+<img
+src='exercise_files/93-admin-dashboard.png'
+alt='93-admin-dashboard.png'
+width=600
+/>
+
+<img
+src='exercise_files/93-admin-dashboard-delete-orders.png'
+alt='93-admin-dashboard-delete-orders.png'
+width=600
+/>
