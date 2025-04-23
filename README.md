@@ -1089,3 +1089,5 @@ width=600
 />
 
 ## 094. Admin Layout & Main Nav
+
+## 095. Get Order Summary
