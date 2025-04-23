@@ -1043,3 +1043,13 @@ npm i @paypal/react-paypal-js
 -   app/(root)/order/[id]/order-details-table.tsx
 
 -   paypal button -> use sandbox (personal) acc details to make payment
+
+---
+
+# Section 09. Order History & User Profile
+
+## 85. Section Intro
+
+## 86. User Layout & Menu
+
+## 87. Get My Orders Action
