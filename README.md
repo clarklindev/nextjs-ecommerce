@@ -1118,3 +1118,5 @@ import {requireAdmin} from '@/lib/auth-guard';
 await requireAdmin();
 
 ```
+
+## 099. Admin Orders Page & Action
