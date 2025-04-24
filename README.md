@@ -1130,3 +1130,5 @@ npx shadcn@latest add alert-dialog dialog
 ## 101. Update Order Actions (COD)
 
 -   for Cash on delivery -> mark order as paid
+
+## 102. Update Order Buttons (COD)
