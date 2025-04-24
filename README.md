@@ -1093,3 +1093,12 @@ width=600
 ## 095. Get Order Summary
 
 ## 096. Admin Overview Display Data
+
+## 097. Monthly Sales Chart
+
+-   recharts
+-   recharts.org
+
+```sh
+npm i recharts
+```
