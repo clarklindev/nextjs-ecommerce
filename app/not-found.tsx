@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { LogoSVG } from '@/components/share/header/logoSVG';
+import { LogoSVG } from '@/components/shared/header/logoSVG';
 
 const NotFoundPage = () => {
     return (

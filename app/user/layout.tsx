@@ -1,8 +1,8 @@
 // import { APP_NAME } from '@/lib/constants';
 // import Image from 'next/image';
 import Link from 'next/link';
-import Menu from '@/components/share/header/menu';
-import { LogoSVG } from '@/components/share/header/logoSVG';
+import Menu from '@/components/shared/header/menu';
+import { LogoSVG } from '@/components/shared/header/logoSVG';
 import MainNav from './main-nav';
 
 export default function UserLayout({

@@ -11,7 +11,7 @@ import CredentialsSignInForm from './credentials-signin-form';
 
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
-import { LogoSVG } from '@/components/share/header/logoSVG';
+import { LogoSVG } from '@/components/shared/header/logoSVG';
 
 export const metadata: Metadata = {
     title: 'Sign in'

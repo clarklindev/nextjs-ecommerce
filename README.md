@@ -1120,3 +1120,9 @@ await requireAdmin();
 ```
 
 ## 099. Admin Orders Page & Action
+
+## 100. Delete Orders
+
+```sh
+npx shadcn@latest add alert-dialog dialog
+```

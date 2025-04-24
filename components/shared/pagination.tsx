@@ -33,7 +33,7 @@ const Pagination = ({ page, totalPages, urlParamName }: PaginationProps) => {
             <Button
                 size="lg"
                 variant="outline"
-                className="w-28"
+                className="w-28 cursor-pointer"
                 disabled={Number(page) <= 1}
                 onClick={() => handleClick('prev')}
             >
@@ -42,7 +42,7 @@ const Pagination = ({ page, totalPages, urlParamName }: PaginationProps) => {
             <Button
                 size="lg"
                 variant="outline"
-                className="w-28"
+                className="w-28 cursor-pointer"
                 disabled={Number(page) >= totalPages}
                 onClick={() => handleClick('next')}
             >

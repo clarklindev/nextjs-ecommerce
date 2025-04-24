@@ -10,7 +10,7 @@ import { Metadata } from 'next';
 import SignUpForm from './sign-up-form';
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
-import { LogoSVG } from '@/components/share/header/logoSVG';
+import { LogoSVG } from '@/components/shared/header/logoSVG';
 
 export const metadata: Metadata = {
     title: 'Sign up'
