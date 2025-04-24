@@ -1102,3 +1102,19 @@ width=600
 ```sh
 npm i recharts
 ```
+
+## 098. Protecting Admin Routes
+
+-   admin/overview/page.tsx
+-   admin/products/page.tsx
+-   admin/products/[id]/page.tsx
+-   admin/orders/page.tsx
+-   admin/create/page.tsx
+-   admin/users/page.tsx
+-   admin/users/[id]/page.tsx
+
+```
+import {requireAdmin} from '@/lib/auth-guard';
+await requireAdmin();
+
+```
