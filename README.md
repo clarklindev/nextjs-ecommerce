@@ -1154,3 +1154,5 @@ width=600
 ## 105. Display Products
 
 ## 106. Delete Products
+
+## 107. Create & Update Actions
