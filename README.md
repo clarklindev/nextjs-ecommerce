@@ -1150,3 +1150,5 @@ src='exercise_files/104-product-create.png'
 alt='104-product-create.png'
 width=600
 />
+
+## 105. Display Products
