@@ -1132,3 +1132,21 @@ npx shadcn@latest add alert-dialog dialog
 -   for Cash on delivery -> mark order as paid
 
 ## 102. Update Order Buttons (COD)
+
+---
+
+# 11. Admin Products & Image Upload
+
+## 104. Get Products For Admin Page
+
+<img
+src='exercise_files/104-products.png'
+alt='104-products.png'
+width=600
+/>
+
+<img
+src='exercise_files/104-product-create.png'
+alt='104-product-create.png'
+width=600
+/>
