@@ -1158,3 +1158,17 @@ width=600
 ## 107. Create & Update Actions
 
 ## 108. Create Product Page & Form
+
+## 109. Form Fields & Slugify
+
+```sh
+npm i slugify
+```
+
+```
+import slugify from 'slugify'
+```
+
+```
+npx shadcn@latest add textarea
+```
