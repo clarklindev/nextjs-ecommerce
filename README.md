@@ -1173,4 +1173,22 @@ import slugify from 'slugify'
 npx shadcn@latest add textarea
 ```
 
-# 110. Create Product Form Submission
+## 110. Create Product Form Submission
+
+## 111. Uploadthing Configuration
+
+-   https://uploadthing.com/
+-   api keys
+
+-   app id='' GET FROM URL: https://uploadthing.com/dashboard/personal-team/(APP
+    ID)/api-keys
+
+-   UPLOADTHING_TOKEN=''
+-   UPLOADTHING_SECRET=''
+-   UPLOADTHING_APPID=''
+
+-   https://docs.uploadthing.com/getting-started/appdir -> Set Up A FileRouter
+
+```sh
+npm install uploadthing @uploadthing/react
+```
