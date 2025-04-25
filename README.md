@@ -1192,3 +1192,5 @@ npx shadcn@latest add textarea
 ```sh
 npm install uploadthing @uploadthing/react
 ```
+
+## 112. Add Image Uploads
