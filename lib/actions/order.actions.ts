@@ -62,7 +62,7 @@ export async function createOrder() {
             itemsPrice: cart.itemsPrice,
             taxPrice: cart.taxPrice,
             shippingPrice: cart.shippingPrice,
-            totalPrice: cart.itemsPrice
+            totalPrice: cart.totalPrice
         });
 
         //create a transaction (to create order and order items) in db
