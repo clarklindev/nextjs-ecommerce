@@ -1197,10 +1197,6 @@ npm install uploadthing @uploadthing/react
 
 ## 113. Product Cleanup
 
--   IMPLEMENTED
-
 ## 114. Is Featured & Banner
-
--   NOT IMPLEMENTED
 
 ## 115. Product Update Form

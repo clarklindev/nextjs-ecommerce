@@ -2,7 +2,7 @@
 import { prisma } from '@/db/prisma';
 // import { convertToPlainObject } from '../utils';
 import { LATEST_PRODUCTS_LIMIT, PAGE_SIZE } from '../constants';
-import { formatError } from '../utils';
+import { convertToPlainObject, formatError } from '../utils';
 import { revalidatePath } from 'next/cache';
 import { insertProductSchema, updateProductSchema } from '../validators';
 import { z } from 'zod';
@@ -30,6 +30,15 @@ export async function getProductBySlug(slug: string) {
     return await prisma.product.findFirst({
         where: { slug: slug }
     });
+}
+
+//get single product by its id
+export async function getProductById(productId: string) {
+    const data = await prisma.product.findFirst({
+        where: { id: productId }
+    });
+
+    return convertToPlainObject(data);
 }
 
 //get all products
