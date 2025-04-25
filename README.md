@@ -1194,3 +1194,5 @@ npm install uploadthing @uploadthing/react
 ```
 
 ## 112. Add Image Uploads
+
+## 113. Product Cleanup
