@@ -1200,3 +1200,17 @@ npm install uploadthing @uploadthing/react
 ## 114. Is Featured & Banner
 
 ## 115. Product Update Form
+
+---
+
+# 12. Admin Users & Search
+
+<img
+src='exercise_files/116-admin-for-user.png'
+alt='116-admin-for-user.png'
+width=600
+/>
+
+## 117. Get & Display Users
+
+## 118. Delete Users
