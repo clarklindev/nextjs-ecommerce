@@ -1265,3 +1265,7 @@ width=600
 -   Publishable key -
     pk_test_51RCFkfRxNbwAgTkE4VBBfHkIPpCQBa7mx2HUPYgH77GRgRDOvafgY3qpmR9RkByABdvO9vRz7GEsRbImBW8b2RfY00Fq0PASVt
 -   Secret key
+
+```sh
+npm i stripe @stripe/stripe-js @stripe/react-stripe-js
+```
