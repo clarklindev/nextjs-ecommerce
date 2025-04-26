@@ -1269,3 +1269,27 @@ width=600
 ```sh
 npm i stripe @stripe/stripe-js @stripe/react-stripe-js
 ```
+
+## 147. Order Form Payment Intent
+
+-   create a payment intent
+-   `app/(root)/order/[id]/page.tsx`
+
+-   Stripe Payment intent
+
+<img
+src='exercise_files/147-stripe-payment-intent.png'
+alt='147-stripe-payment-intent.png'
+width=600
+/>
+
+    1. create a payment intent (amount, currency, metadata)
+    2. confirm payment on client (use @stripe/stripe-js sdk to confirm payment on client)
+    3. check payment status
+        - require payment method
+        - requires confirmation
+        - requires action
+        - processing
+        - succeeded
+        - canceled or failed
+    4. handle success/failure
