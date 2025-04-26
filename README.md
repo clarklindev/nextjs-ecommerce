@@ -1220,3 +1220,5 @@ width=600
 ```sh
 npx shadcn@latest add select
 ```
+
+## 120. Update User Form
