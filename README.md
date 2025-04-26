@@ -1242,3 +1242,26 @@ npx shadcn@latest add select
 ---
 
 # 15. Stripe Payments
+
+## 145. Section Intro
+
+-   stripe payments
+    -   test mode
+    -   api keys -> .env / vercel
+    -   payment intent
+
+<img
+src='exercise_files/145-stripe-payments.png'
+alt='145-stripe-payments.png'
+width=600
+/>
+
+## 146. Stripe Setup
+
+-   NOTE: now, default -> You're testing in a sandbox — your place to experiment
+    with Stripe functionality
+-   https://dashboard.stripe.com/test/apikeys
+
+-   Publishable key -
+    pk_test_51RCFkfRxNbwAgTkE4VBBfHkIPpCQBa7mx2HUPYgH77GRgRDOvafgY3qpmR9RkByABdvO9vRz7GEsRbImBW8b2RfY00Fq0PASVt
+-   Secret key
