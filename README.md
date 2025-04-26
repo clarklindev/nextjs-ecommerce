@@ -1230,3 +1230,15 @@ npx shadcn@latest add select
 ## 123. Admin Order Search
 
 ## 124. Admin User Search
+
+---
+
+# 13. Search Filtering, Drawer & Carousel
+
+---
+
+# 14. Ratings & Reviews
+
+---
+
+# 15. Stripe Payments
