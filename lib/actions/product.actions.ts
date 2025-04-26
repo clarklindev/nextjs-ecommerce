@@ -46,13 +46,13 @@ export async function getProductById(productId: string) {
 export async function getAllProducts({
     query,
     limit = PAGE_SIZE,
-    page,
-    category
-}: {
+    page
+}: // category
+{
     query: string;
     limit?: number;
     page: number;
-    category?: string;
+    // category?: string;
 }) {
     const queryFilter: Prisma.ProductWhereInput =
         query && query !== 'all'
