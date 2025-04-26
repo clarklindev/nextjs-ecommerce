@@ -1214,3 +1214,9 @@ width=600
 ## 117. Get & Display Users
 
 ## 118. Delete Users
+
+## 119. User Edit Page
+
+```sh
+npx shadcn@latest add select
+```

@@ -10,9 +10,13 @@ import {
     TableHeader,
     TableRow
 } from '@/components/ui/table';
-import { deleteOrder } from '@/lib/actions/order.actions';
+// import { deleteOrder } from '@/lib/actions/order.actions';
 import { deleteUser, getAllUsers } from '@/lib/actions/user.actions';
-import { formatCurrency, formatDateTime, formatId } from '@/lib/utils';
+import {
+    // formatCurrency,
+    // formatDateTime,
+    formatId
+} from '@/lib/utils';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -64,7 +68,7 @@ const AdminUserPage = async (props: {
                                     </Button>
                                     <DeleteDialog
                                         id={user.id}
-                                        action={deleteUser}
+                                        action={deleteUser!}
                                     />
                                 </TableCell>
                             </TableRow>
