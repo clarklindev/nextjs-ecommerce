@@ -1354,3 +1354,12 @@ npm i dotenv
 ```
 
 ## 155. Preview Email In Browser With React Email
+
+## 156. Sending Emails
+
+- email/index.tsx -> call `sendPurchaseReceipt()`
+- call it from lib/actions/order.actions.ts - `updateOrderToPaid()`
+
+- NOTE: you can only send emails with the email you registered with resend...
+
+## 158. Icon Boxes Component
