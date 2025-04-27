@@ -1299,3 +1299,16 @@ width=600
 -   https://www.npmjs.com/package/@stripe/react-stripe-js
 
 ## 149. Stripe Payment Success Page
+
+## 150. Webhook To Mark Order As Paid
+
+-   service notifying another service when something happens
+-   notify our app when payment is made through stripe so we can mark it as paid
+-   the webhook should update db so `isPaid` and `paidAt`
+-   NOTE: LESSON IS FOR PRODUCTION VERSION OF SITE
+
+-   docs.stripe.com/webhooks/quickstart?lang=node
+-   https://dashboard.stripe.com/test/workbench/welcome
+
+-   add vercel env: STRIPE_WEBHOOK_SECRET:
+    `whsec_7FgusVxUC9TtG1HHz6g1T5FqYajD8UvR`
