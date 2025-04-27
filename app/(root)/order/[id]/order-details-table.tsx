@@ -38,7 +38,7 @@ const OrderDetailsTable = ({
     isAdmin,
     stripeClientSecret
 }: {
-    order: Order;
+    order: Omit<Order, 'paymentResult'>;
     paypalClientId: string;
     isAdmin: boolean;
     stripeClientSecret: string | null;
@@ -144,7 +144,8 @@ const OrderDetailsTable = ({
                             <p className="mb-2">{paymentMethod}</p>
                             {isPaid ? (
                                 <Badge variant="secondary">
-                                    Paid at {formatDateTime(paidAt!).dateTime}{' '}
+                                    Paid at{' '}
+                                    {formatDateTime(paidAt!).dateTime}{' '}
                                 </Badge>
                             ) : (
                                 <Badge variant="destructive">Not paid</Badge>
