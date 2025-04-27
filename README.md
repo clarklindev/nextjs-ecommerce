@@ -1297,3 +1297,5 @@ width=600
 ## 148. Stripe Payment Component
 
 -   https://www.npmjs.com/package/@stripe/react-stripe-js
+
+## 149. Stripe Payment Success Page
