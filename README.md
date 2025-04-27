@@ -1293,3 +1293,7 @@ width=600
         - succeeded
         - canceled or failed
     4. handle success/failure
+
+## 148. Stripe Payment Component
+
+-   https://www.npmjs.com/package/@stripe/react-stripe-js
