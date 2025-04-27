@@ -1310,5 +1310,15 @@ width=600
 -   docs.stripe.com/webhooks/quickstart?lang=node
 -   https://dashboard.stripe.com/test/workbench/welcome
 
+-   create stripe webhook Endpoint
+    -   append to vercel deploy URL - `/api/webhooks/stripe`
+-   get Signing secret
+
 -   add vercel env: STRIPE_WEBHOOK_SECRET:
     `whsec_7FgusVxUC9TtG1HHz6g1T5FqYajD8UvR`
+
+-   DONT FORGET TO ADJUST .env on vercel
+
+-   NEXT_PUBLIC_SERVER_URL = "http://localhost:3000"
+-   NEXTAUTH_URL='http://localhost:3000'
+-   NEXTAUTH_URL_INTERNAL='http://localhost:3000'
