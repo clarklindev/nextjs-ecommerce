@@ -1322,3 +1322,23 @@ width=600
 -   NEXT_PUBLIC_SERVER_URL = "http://localhost:3000"
 -   NEXTAUTH_URL='http://localhost:3000'
 -   NEXTAUTH_URL_INTERNAL='http://localhost:3000'
+
+---
+
+# Section 16. Email Purchase Receipts
+
+## 151. Section Intro
+
+-   use Resend to send email
+-   [react email](https://react.email/) (prebuilt ui components for email)
+
+## 152. Resend API Key & Setup
+
+-   https://resend.com/api-keys
+-   create api key
+-   env RESEND_API_KEY
+-   env SENDER_EMAIL
+
+```sh
+npm i resend react-email @react-email/components
+```
