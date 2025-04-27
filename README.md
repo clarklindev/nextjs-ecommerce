@@ -12,25 +12,25 @@ npx shadcn@latest add button
 pnpm i lucide-react
 ```
 
--   Next Themes
+- Next Themes
 
 ```sh
 pnpm i next-themes
 ```
 
--   Dropdown menu
+- Dropdown menu
 
 ```sh
 npx shadcn@latest add dropdown-menu
 ```
 
--   Sheet
+- Sheet
 
 ```sh
 npx shadcn@latest add sheet
 ```
 
--   card
+- card
 
 ```sh
 npx shadcn@latest add card
@@ -38,25 +38,25 @@ npx shadcn@latest add card
 
 ## 04. The environment
 
--   prettier
--   eslint (microsoft)
--   prisma (prisma)
--   simple react snippets (burke holland)
--   javascript es6 (charalampos karypidis)
--   markdown preview enhanced (yiyi wang)
+- prettier
+- eslint (microsoft)
+- prisma (prisma)
+- simple react snippets (burke holland)
+- javascript es6 (charalampos karypidis)
+- markdown preview enhanced (yiyi wang)
 
 ## 19. PostgreSQL & Prisma Setup
 
 ### Vercel Storage
 
--   serverless oostgres -> neon
-    -   choose region
-    -   choose plan
-    -   choose name
+- serverless oostgres -> neon
+    - choose region
+    - choose plan
+    - choose name
 
 ### prisma
 
--   vscode extension: `prisma`
+- vscode extension: `prisma`
 
 ```sh
 pnpm i -D prisma @prisma/client
@@ -68,17 +68,17 @@ pnpm i -D prisma @prisma/client
 npx prisma init
 ```
 
--   IT ADDS TO .env
-    DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
--   replace with vercel storage -> neon generated DATABASE_URL string
+- IT ADDS TO .env
+  DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+- replace with vercel storage -> neon generated DATABASE_URL string
 
 ## 20. Prisma Models & Migrations
 
 ### prisma models/schema
 
--   https://www.prisma.io/docs/orm/prisma-schema/data-model/models
+- https://www.prisma.io/docs/orm/prisma-schema/data-model/models
 
--   prisma/schema.prisma
+- prisma/schema.prisma
 
 ```prisma
 model Product {
@@ -101,7 +101,7 @@ model Product {
 
 ### step1 - generate prisma client
 
--   @6min
+- @6min
 
 ```sh
 npx prisma generate
@@ -109,9 +109,9 @@ npx prisma generate
 
 ### step2 - migration
 
--   add to db the `Product` table
--   run migration: here we called it 'init'
--   creates db and runs it
+- add to db the `Product` table
+- run migration: here we called it 'init'
+- creates db and runs it
 
 ```sh
 npx prisma migrate dev --name init
@@ -123,11 +123,11 @@ npx prisma migrate dev --name init
 npx prisma studio
 ```
 
--   Prisma Studio is up on http://localhost:5555
+- Prisma Studio is up on http://localhost:5555
 
 ## 21. Seed Sample data
 
--   db/seed.ts
+- db/seed.ts
 
 ```sh
 npx tsx ./db/seed
@@ -135,13 +135,13 @@ npx tsx ./db/seed
 
 ## 23. Zod Validation & Type Inference
 
--   @ 2min50sec install zod
+- @ 2min50sec install zod
 
 ```sh
 npm i zod
 ```
 
--   validation schemas (lib/validators.ts)
+- validation schemas (lib/validators.ts)
 
 ```ts
 import { z } from 'zod';
@@ -170,9 +170,9 @@ export const insertProductSchema = z.object({
 });
 ```
 
--   type/index.ts
--   bring in the types from insertProductSchema with
-    `z.infer<typeof insertProductSchema>`
+- type/index.ts
+- bring in the types from insertProductSchema with
+  `z.infer<typeof insertProductSchema>`
 
 ```ts
 import { z } from 'zod';
@@ -187,7 +187,7 @@ export type Product = z.infer<typeof insertProductSchema> & {
 
 ### use `import { Product } from '@/types';`
 
--   components/share/product/product-card.tsx
+- components/share/product/product-card.tsx
 
 ```ts
 import { Product } from '@/types';
@@ -197,7 +197,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 };
 ```
 
--   components/share/product/product-list.tsx
+- components/share/product/product-list.tsx
 
 ```ts
 import ProductCard from './product-card';
@@ -235,7 +235,7 @@ const ProductList = ({
 export default ProductList;
 ```
 
--   then in app/(root)/page.tsx
+- then in app/(root)/page.tsx
 
 ```ts
 'use server';
@@ -274,7 +274,7 @@ npm i @neondatabase/serverless @prisma/adapter-neon ws
 npm i -D @types/ws bufferutil
 ```
 
--   `prisma/schema.prisma`
+- `prisma/schema.prisma`
 
 ```prisma
 generator client {
@@ -284,7 +284,7 @@ generator client {
 }
 ```
 
--   whenever we edit this file, we need to regenerate the client
+- whenever we edit this file, we need to regenerate the client
 
 ```sh
 npx prisma generate
@@ -292,9 +292,9 @@ npx prisma generate
 
 25. product details page
 
--   TODO: create action that will get slug from url and fetch data depending on
-    slug
--   lib/actions/product.actions.ts
+- TODO: create action that will get slug from url and fetch data depending on
+  slug
+- lib/actions/product.actions.ts
 
 ```ts
 export async function getProductBySlug(slug: string) {
@@ -304,7 +304,7 @@ export async function getProductBySlug(slug: string) {
 }
 ```
 
--   install shadcn badge
+- install shadcn badge
 
 ```sh
 npx shadcn@latest add badge
@@ -312,7 +312,7 @@ npx shadcn@latest add badge
 
 26. product images component
 
--   components/shared/product/
+- components/shared/product/
 
 ---
 
@@ -320,12 +320,12 @@ npx shadcn@latest add badge
 
 ## 29. intro
 
--   https://authjs.dev/getting-started/adapters/prisma
+- https://authjs.dev/getting-started/adapters/prisma
 
 ## 30. User related models
 
--   copy from models ->
-    https://authjs.dev/getting-started/adapters/prisma#schema -> PostgreSQL
+- copy from models -> https://authjs.dev/getting-started/adapters/prisma#schema
+  -> PostgreSQL
 
 ```prisma
 //prisma/schema-postgres.prisma
@@ -339,7 +339,7 @@ model Session {}
 model VerificationToken{}
 ```
 
--   because we added new models we have to regenerate our prisma client
+- because we added new models we have to regenerate our prisma client
 
 ```sh
 npx prisma generate
@@ -355,8 +355,8 @@ npx prisma studio
 
 ## 31. seed user data
 
--   seed sample data with users `db/sample-data.ts`
--   password should be hashed
+- seed sample data with users `db/sample-data.ts`
+- password should be hashed
 
 ```sh
 npm i bcrypt-ts-edge
@@ -417,19 +417,19 @@ npx prisma studio
 
 ## 32. Next Auth setup
 
--   generate a secret to sign JWT / session
--   lessons use credentials provider (email/password)
--   lessons use next-auth v5 (beta)
+- generate a secret to sign JWT / session
+- lessons use credentials provider (email/password)
+- lessons use next-auth v5 (beta)
 
 ## older docs (this is following course lessons)
 
--   [next-auth.js](https://next-auth.js.org/configuration/options#nextauth_secret)
+- [next-auth.js](https://next-auth.js.org/configuration/options#nextauth_secret)
 
 ## authentication
 
 ### credentials
 
--   https://authjs.dev/getting-started/authentication/credentials
+- https://authjs.dev/getting-started/authentication/credentials
 
 ---
 
@@ -437,13 +437,13 @@ npx prisma studio
 
 ### providers
 
--   https://authjs.dev/getting-started/providers/credentials
+- https://authjs.dev/getting-started/providers/credentials
 
 ### adapter
 
--   https://authjs.dev/getting-started/adapters/prisma
+- https://authjs.dev/getting-started/adapters/prisma
 
--   note we using next-auth v5
+- note we using next-auth v5
 
 ```sh
 npm i next-auth@beta
@@ -459,19 +459,19 @@ npm i @auth/prisma-adapter
 openssl rand -base64 32
 ```
 
--   set as NEXTAUTH_SECRET
+- set as NEXTAUTH_SECRET
 
--   env variables we need to add.
+- env variables we need to add.
 
-    -   NEXTAUTH_SECRET=
-    -   NEXTAUTH_URL="http://localhost:3000"
-    -   NEXTAUTH_URL_INTERNAL="http://localhost:3000"
+    - NEXTAUTH_SECRET=
+    - NEXTAUTH_URL="http://localhost:3000"
+    - NEXTAUTH_URL_INTERNAL="http://localhost:3000"
 
 ---
 
 ## newer docs
 
--   [auth.js](https://authjs.dev/getting-started/installation?framework=Next.js)
+- [auth.js](https://authjs.dev/getting-started/installation?framework=Next.js)
 
 ```sh
 npm i next-auth@beta
@@ -485,7 +485,7 @@ npx auth secret
 
 ## 33. Next Auth Catch all Api Route
 
--   `app/api/auth/[...nextauth]/route.ts`
+- `app/api/auth/[...nextauth]/route.ts`
 
 ## 36. Credentials Sign in form
 
@@ -495,10 +495,10 @@ npx shadcn@latest add label input
 
 ## 37. Hook Up Sign In Form
 
--   hooks useActionState / useFormStatus
+- hooks useActionState / useFormStatus
 
--   login with credentials db/sample-data.ts
--   see session: `http://localhost:3000/api/auth/session`
+- login with credentials db/sample-data.ts
+- see session: `http://localhost:3000/api/auth/session`
 
 ## 38. Callback URL redirect
 
@@ -508,21 +508,21 @@ alt='38-callbackUrl-redirect.png'
 width=600
 />
 
--   if user has the callback url, should redirect user to that page
+- if user has the callback url, should redirect user to that page
 
--   https://www.udemy.com/course/nextjs-ecommerce-course/learn/lecture/47560379#questions/22871887
+- https://www.udemy.com/course/nextjs-ecommerce-course/learn/lecture/47560379#questions/22871887
 
--   signIn() function handles the redirect to callbackUrl internally, IF you
-    pass it in
--   signIn() (from NextAuth) -> Detects callbackUrl and redirects
--   Official Docs Confirm:
--   signIn() will redirect to the URL specified by callbackUrl if no redirect:
-    false is provided. (From NextAuth.js documentation)
--   The redirect to callbackUrl is built into NextAuth’s signIn() behavior.
+- signIn() function handles the redirect to callbackUrl internally, IF you pass
+  it in
+- signIn() (from NextAuth) -> Detects callbackUrl and redirects
+- Official Docs Confirm:
+- signIn() will redirect to the URL specified by callbackUrl if no redirect:
+  false is provided. (From NextAuth.js documentation)
+- The redirect to callbackUrl is built into NextAuth’s signIn() behavior.
 
 ## 39. User Button & Sign out
 
--   we copy the env variables to vercel
+- we copy the env variables to vercel
 
 ```
 NEXTAUTH_SECRET="3GFiN8N4oF5YWgyq11/8DCUZsLjIfs3aTrsZKKCZVX4=" # Added by `npx auth`. Read more: https://cli.authjs.dev
@@ -530,14 +530,14 @@ NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_URL_INTERNAL=http://localhost:3000
 ```
 
--   note: vercel build errors happen if you do not add prefix `https://` or
-    `http://`
+- note: vercel build errors happen if you do not add prefix `https://` or
+  `http://`
 
--   TODO: add the logged-in User button
--   TODO: ability to sign out
+- TODO: add the logged-in User button
+- TODO: ability to sign out
 
--   components/shared/header/user-button.tsx
--   put in components/shared/header/menu.tsx
+- components/shared/header/user-button.tsx
+- put in components/shared/header/menu.tsx
 
 ---
 
@@ -545,7 +545,7 @@ NEXTAUTH_URL_INTERNAL=http://localhost:3000
 
 ## 46. add to cart component
 
--   Toast Component
+- Toast Component
 
 ```sh
 npx shadcn@latest add toast
@@ -553,24 +553,24 @@ npx shadcn@latest add toast
 
 ## 47. session cart ID cookie
 
--   TODO: when we come to the site, it'll create this session cart ID, and
-    generate a cookie (UUID value)
--   then can use that in our action later to connect the user to their cart
-    (whether logged in or not)
+- TODO: when we come to the site, it'll create this session cart ID, and
+  generate a cookie (UUID value)
+- then can use that in our action later to connect the user to their cart
+  (whether logged in or not)
 
--   auth.ts
--   authorized() -> invoked when a user needs authorization using middleware
--   setup middleware (function that runs between request/response) to use auth
-    function, which will run on every request
+- auth.ts
+- authorized() -> invoked when a user needs authorization using middleware
+- setup middleware (function that runs between request/response) to use auth
+  function, which will run on every request
 
 ## 48. get item from cart
 
--   to add an item to cart,
+- to add an item to cart,
 
-    -   we have to get user
-    -   get product that we are adding from db
+    - we have to get user
+    - get product that we are adding from db
 
--   if not logged in, user id will be `undefined`
+- if not logged in, user id will be `undefined`
 
 ```
 ┌─────────────────┬────────────────────────────────────────┐
@@ -583,8 +583,8 @@ npx shadcn@latest add toast
 
 ### using the cart
 
--   if they're logged in (there is a userId) -> we can get the cart by that...
--   if they're not logged in -> get cart by sessionCartId and cookie
+- if they're logged in (there is a userId) -> we can get the cart by that...
+- if they're not logged in -> get cart by sessionCartId and cookie
 
 ```ts
 //lib/actions/cart.actions.ts
@@ -611,7 +611,7 @@ export async function getMyCart() {
 
 ## 50. Handle Quantity & Multiple Products
 
--   adding same product should update quantity and not add new item to cart
+- adding same product should update quantity and not add new item to cart
 
 ## 51. Remove Cart Action
 
@@ -649,9 +649,9 @@ npx shadcn@latest add table
 
 ## 58. Shipping Address Zod Schema & Page
 
--   user enters address
--   if users data is in database, it will be pre-populated
--   `react-hook-form` package
+- user enters address
+- if users data is in database, it will be pre-populated
+- `react-hook-form` package
 
 ## 59. Shipping Address & Form
 
@@ -659,8 +659,8 @@ npx shadcn@latest add table
 npm i react-hook-form @hookform/resolvers
 ```
 
--   https://ui.shadcn.com/docs/components/form#create-a-form-schema
--   https://ui.shadcn.com/docs/components/form#build-your-form
+- https://ui.shadcn.com/docs/components/form#create-a-form-schema
+- https://ui.shadcn.com/docs/components/form#build-your-form
 
 ```sh
 npx shadcn@latest add form
@@ -670,7 +670,7 @@ npx shadcn@latest add form
 
 ## 61. Checkout Steps Component
 
--   form steps
+- form steps
 
 1. user login
 2. shipping address
@@ -681,8 +681,8 @@ npx shadcn@latest add form
 
 ## 63. Protecting Paths
 
--   https://authjs.dev/getting-started/session-management/protecting
--   https://www.udemy.com/course/nextjs-ecommerce-course/learn/lecture/47571607#questions/22806241/
+- https://authjs.dev/getting-started/session-management/protecting
+- https://www.udemy.com/course/nextjs-ecommerce-course/learn/lecture/47571607#questions/22806241/
 
 ---
 
@@ -710,8 +710,8 @@ width=600
 
 ## 65. Payment Method Action & Zod Schema
 
--   constants
--   schema
+- constants
+- schema
 
 ## 66. Payment Method Page
 
@@ -737,11 +737,11 @@ npx prisma studio
 
 ## 69. Order Zod Schemas & Types
 
--   lib/validators.ts
+- lib/validators.ts
 
 ## 70. Place Order Page
 
--   lib/actions/order.actions.ts
+- lib/actions/order.actions.ts
 
 ## 71. Create Order Action
 
@@ -769,15 +769,15 @@ npx prisma migrate dev --name orderitems_update
 
 ## 77. PayPal Sandbox Setup
 
--   developer.paypal.com
--   developer sandbox mode to test app
--   creates sandbox acc for buyer (personal) AND seller (business acc)
--   sandbox -> create an app
+- developer.paypal.com
+- developer sandbox mode to test app
+- creates sandbox acc for buyer (personal) AND seller (business acc)
+- sandbox -> create an app
 
--   clientID ->
--   secret ->
+- clientID ->
+- secret ->
 
--   given accounts
+- given accounts
 
 <img
 src='exercise_files/77-personal-business-acc.png'
@@ -785,7 +785,7 @@ alt='77-personal-business-acc.png'
 width=600
 />
 
--   create an app
+- create an app
 
 <img
 src='exercise_files/77-app-clientid-secret.png'
@@ -803,17 +803,17 @@ PAYPAL_APP_SECRET="EA3s35M_kuoYaEmDmV906GIPGTsTTz6odOS"
 
 ## 78. Generate Access Token
 
--   generate access token
--   access token is secure identifier that allows app to interact with paypal
-    services on behalf of user/merchant
--   https://developer.paypal.com/reference/get-an-access-token/
+- generate access token
+- access token is secure identifier that allows app to interact with paypal
+  services on behalf of user/merchant
+- https://developer.paypal.com/reference/get-an-access-token/
 
--   request url: https://api-m.sandbox.paypal.com/
-    -   docs -> https://api-m.sandbox.paypal.com/v1/oauth2/token
--   also include: client id and secret
--   and request body - > grant_type=client_credentials
+- request url: https://api-m.sandbox.paypal.com/
+    - docs -> https://api-m.sandbox.paypal.com/v1/oauth2/token
+- also include: client id and secret
+- and request body - > grant_type=client_credentials
 
--   lib/paypal.ts
+- lib/paypal.ts
 
 ```ts
 //lib/paypal.ts
@@ -852,7 +852,7 @@ async function generateAccessToken() {
 
 ## 79. Jest Testing For Access Token
 
--   dotenv for .env
+- dotenv for .env
 
 ```sh
 npm i -D jest ts-jest ts-node @types/jest @types/node dotenv
@@ -871,9 +871,9 @@ npm init jest@latest
 √ Automatically clear mock calls, instances, contexts and results before every test? ... yes
 ```
 
--   this creates: `jest.config.ts`
+- this creates: `jest.config.ts`
 
--   update:
+- update:
 
 ```ts
 //jest.config.ts
@@ -883,22 +883,22 @@ npm init jest@latest
 preset: 'ts-jest';
 ```
 
--   package.json
+- package.json
 
 ```json
     "test": "jest",
     "test:watch": "jest --watch"
 ```
 
--   jest.setup.ts
+- jest.setup.ts
 
 ```ts
 import dotenv from 'dotenv';
 dotenv.config();
 ```
 
--   tell jest config where setup file is
--   jest.config.ts
+- tell jest config where setup file is
+- jest.config.ts
 
 ```
   setupFiles: ['<rootDir>/jest.setup.ts']
@@ -925,12 +925,12 @@ npm test
 
 ## 80. Create Order & Capture Payment Request
 
--   http://developer.paypal.com/docs/api/orders/v2
+- http://developer.paypal.com/docs/api/orders/v2
 
--   ability to create an order
+- ability to create an order
 
-    -   send request to https://api-m.sandbox.paypal.com/v2/checkout/orders
-    -   send Authorization: Bearer `token`
+    - send request to https://api-m.sandbox.paypal.com/v2/checkout/orders
+    - send Authorization: Bearer `token`
 
 ```ts
 //paypal.ts
@@ -979,11 +979,11 @@ export const paypal = {
 };
 ```
 
--   capture payment
+- capture payment
 
 ## 81. Jest Testing For Order Payment
 
--   npm test
+- npm test
 
 ## 82. Create PayPal Order Action
 
@@ -1040,9 +1040,9 @@ export async function createPayPalOrder(orderId: string) {
 npm i @paypal/react-paypal-js
 ```
 
--   app/(root)/order/[id]/order-details-table.tsx
+- app/(root)/order/[id]/order-details-table.tsx
 
--   paypal button -> use sandbox (personal) acc details to make payment
+- paypal button -> use sandbox (personal) acc details to make payment
 
 ---
 
@@ -1056,7 +1056,7 @@ npm i @paypal/react-paypal-js
 
 ## 88. Orders Page
 
--   added links to menu to '/user/profile' and '/user/orders'
+- added links to menu to '/user/profile' and '/user/orders'
 
 ## 89. Orders Pagination
 
@@ -1096,8 +1096,8 @@ width=600
 
 ## 097. Monthly Sales Chart
 
--   recharts
--   recharts.org
+- recharts
+- recharts.org
 
 ```sh
 npm i recharts
@@ -1105,13 +1105,13 @@ npm i recharts
 
 ## 098. Protecting Admin Routes
 
--   admin/overview/page.tsx
--   admin/products/page.tsx
--   admin/products/[id]/page.tsx
--   admin/orders/page.tsx
--   admin/create/page.tsx
--   admin/users/page.tsx
--   admin/users/[id]/page.tsx
+- admin/overview/page.tsx
+- admin/products/page.tsx
+- admin/products/[id]/page.tsx
+- admin/orders/page.tsx
+- admin/create/page.tsx
+- admin/users/page.tsx
+- admin/users/[id]/page.tsx
 
 ```
 import {requireAdmin} from '@/lib/auth-guard';
@@ -1129,7 +1129,7 @@ npx shadcn@latest add alert-dialog dialog
 
 ## 101. Update Order Actions (COD)
 
--   for Cash on delivery -> mark order as paid
+- for Cash on delivery -> mark order as paid
 
 ## 102. Update Order Buttons (COD)
 
@@ -1177,17 +1177,17 @@ npx shadcn@latest add textarea
 
 ## 111. Uploadthing Configuration
 
--   https://uploadthing.com/
--   api keys
+- https://uploadthing.com/
+- api keys
 
--   app id='' GET FROM URL: https://uploadthing.com/dashboard/personal-team/(APP
-    ID)/api-keys
+- app id='' GET FROM URL: https://uploadthing.com/dashboard/personal-team/(APP
+  ID)/api-keys
 
--   UPLOADTHING_TOKEN=''
--   UPLOADTHING_SECRET=''
--   UPLOADTHING_APPID=''
+- UPLOADTHING_TOKEN=''
+- UPLOADTHING_SECRET=''
+- UPLOADTHING_APPID=''
 
--   https://docs.uploadthing.com/getting-started/appdir -> Set Up A FileRouter
+- https://docs.uploadthing.com/getting-started/appdir -> Set Up A FileRouter
 
 ```sh
 npm install uploadthing @uploadthing/react
@@ -1245,10 +1245,10 @@ npx shadcn@latest add select
 
 ## 145. Section Intro
 
--   stripe payments
-    -   test mode
-    -   api keys -> .env / vercel
-    -   payment intent
+- stripe payments
+    - test mode
+    - api keys -> .env / vercel
+    - payment intent
 
 <img
 src='exercise_files/145-stripe-payments.png'
@@ -1258,13 +1258,13 @@ width=600
 
 ## 146. Stripe Setup
 
--   NOTE: now, default -> You're testing in a sandbox — your place to experiment
-    with Stripe functionality
--   https://dashboard.stripe.com/test/apikeys
+- NOTE: now, default -> You're testing in a sandbox — your place to experiment
+  with Stripe functionality
+- https://dashboard.stripe.com/test/apikeys
 
--   Publishable key -
-    pk_test_51RCFkfRxNbwAgTkE4VBBfHkIPpCQBa7mx2HUPYgH77GRgRDOvafgY3qpmR9RkByABdvO9vRz7GEsRbImBW8b2RfY00Fq0PASVt
--   Secret key
+- Publishable key -
+  pk_test_51RCFkfRxNbwAgTkE4VBBfHkIPpCQBa7mx2HUPYgH77GRgRDOvafgY3qpmR9RkByABdvO9vRz7GEsRbImBW8b2RfY00Fq0PASVt
+- Secret key
 
 ```sh
 npm i stripe @stripe/stripe-js @stripe/react-stripe-js
@@ -1272,10 +1272,10 @@ npm i stripe @stripe/stripe-js @stripe/react-stripe-js
 
 ## 147. Order Form Payment Intent
 
--   create a payment intent
--   `app/(root)/order/[id]/page.tsx`
+- create a payment intent
+- `app/(root)/order/[id]/page.tsx`
 
--   Stripe Payment intent
+- Stripe Payment intent
 
 <img
 src='exercise_files/147-stripe-payment-intent.png'
@@ -1296,32 +1296,32 @@ width=600
 
 ## 148. Stripe Payment Component
 
--   https://www.npmjs.com/package/@stripe/react-stripe-js
+- https://www.npmjs.com/package/@stripe/react-stripe-js
 
 ## 149. Stripe Payment Success Page
 
 ## 150. Webhook To Mark Order As Paid
 
--   service notifying another service when something happens
--   notify our app when payment is made through stripe so we can mark it as paid
--   the webhook should update db so `isPaid` and `paidAt`
--   NOTE: LESSON IS FOR PRODUCTION VERSION OF SITE
+- service notifying another service when something happens
+- notify our app when payment is made through stripe so we can mark it as paid
+- the webhook should update db so `isPaid` and `paidAt`
+- NOTE: LESSON IS FOR PRODUCTION VERSION OF SITE
 
--   docs.stripe.com/webhooks/quickstart?lang=node
--   https://dashboard.stripe.com/test/workbench/welcome
+- docs.stripe.com/webhooks/quickstart?lang=node
+- https://dashboard.stripe.com/test/workbench/welcome
 
--   create stripe webhook Endpoint
-    -   append to vercel deploy URL - `/api/webhooks/stripe`
--   get Signing secret
+- create stripe webhook Endpoint
+    - append to vercel deploy URL - `/api/webhooks/stripe`
+- get Signing secret
 
--   add vercel env: STRIPE_WEBHOOK_SECRET:
-    `whsec_7FgusVxUC9TtG1HHz6g1T5FqYajD8UvR`
+- add vercel env: STRIPE_WEBHOOK_SECRET:
+  `whsec_7FgusVxUC9TtG1HHz6g1T5FqYajD8UvR`
 
--   DONT FORGET TO ADJUST .env on vercel
+- DONT FORGET TO ADJUST .env on vercel
 
--   NEXT_PUBLIC_SERVER_URL = "http://localhost:3000"
--   NEXTAUTH_URL='http://localhost:3000'
--   NEXTAUTH_URL_INTERNAL='http://localhost:3000'
+- NEXT_PUBLIC_SERVER_URL = "http://localhost:3000"
+- NEXTAUTH_URL='http://localhost:3000'
+- NEXTAUTH_URL_INTERNAL='http://localhost:3000'
 
 ---
 
@@ -1329,16 +1329,26 @@ width=600
 
 ## 151. Section Intro
 
--   use Resend to send email
--   [react email](https://react.email/) (prebuilt ui components for email)
+- use Resend to send email
+- [react email](https://react.email/) (prebuilt ui components for email)
 
 ## 152. Resend API Key & Setup
 
--   https://resend.com/api-keys
--   create api key
--   env RESEND_API_KEY
--   env SENDER_EMAIL
+- https://resend.com/api-keys
+- create api key
+- env RESEND_API_KEY
+- env SENDER_EMAIL
 
 ```sh
 npm i resend react-email @react-email/components
+```
+
+## 153. Resend Main Function
+
+- use Resend to send emails
+- due to folder structure fpr 'email/' not directly in 'next' folder structure,
+  need dotenv to acccess .env
+
+```
+npm i dotenv
 ```
