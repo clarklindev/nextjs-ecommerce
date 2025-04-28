@@ -56,6 +56,7 @@ export const config = {
         })
     ],
     callbacks: {
+        ...authConfig.callbacks,
         //run when session is accessed
         //eslint-disable-next-line
         async session({ session, user, trigger, token }: any) {
