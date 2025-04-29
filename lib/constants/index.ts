@@ -1,7 +1,11 @@
 export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'My Store';
 export const APP_DESCRIPTION =
     process.env.NEXT_PUBLIC_APP_DESCRIPTION || ' My store is huge';
-export const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL; // || 'http://localhost:3000';
+
+if (!process.env.NEXT_PUBLIC_SERVER_URL) {
+    throw new Error('NEXT_PUBLIC_SERVER_URL is not defined');
+}
+export const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL!; // || 'http://localhost:3000';
 
 export const LATEST_PRODUCTS_LIMIT =
     Number(process.env.LATEST_PRODUCTS_LIMIT) || 4;
